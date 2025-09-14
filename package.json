@@ -1,0 +1,7 @@
+{
+  "name": "forum-telegram-mvp",
+  "private": true,
+  "workspaces": [
+    "apps/web"
+  ]
+}
