@@ -1,5 +1,4 @@
-﻿
-import { Pool, QueryResultRow } from 'pg';
+﻿import { Pool, QueryResultRow } from 'pg';
 
 const globalForPg = globalThis as unknown as { _pgPool?: Pool };
 
@@ -9,7 +8,7 @@ export const pool =
         connectionString: process.env.DATABASE_URL,
         max: 3,
         idleTimeoutMillis: 30000,
-        ssl: { rejectUnauthorized: false }, // 👈 добавляем
+        ssl: { rejectUnauthorized: false }, // 👈 фикс SSL
     });
 
 if (!globalForPg._pgPool) globalForPg._pgPool = pool;
