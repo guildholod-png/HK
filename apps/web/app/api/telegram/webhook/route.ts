@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { q } from '@/lib/db'
 
+export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic' // важно для некоторых хостингов
 
 export async function POST(req: NextRequest) {

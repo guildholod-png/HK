@@ -1,6 +1,7 @@
-import { NextRequest, NextResponse } from 'next/server'
+﻿import { NextRequest, NextResponse } from 'next/server'
 import { q } from '@/lib/db'
 
+export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic'
 export async function GET(_req: NextRequest, { params }: { params: { id: string } }) {
   const [topic] = await q(`SELECT id, title, tg_thread_id, tg_chat_id FROM topics WHERE id = $1`, [params.id])
