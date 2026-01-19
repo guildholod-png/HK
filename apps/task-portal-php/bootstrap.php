@@ -6,8 +6,8 @@ date_default_timezone_set('Europe/Moscow');
 $config = [
     'db_path' => __DIR__ . '/storage/app.db',
     'upload_dir' => __DIR__ . '/uploads',
-    'executor_email' => 'executor@example.com',
-    'executor_name' => 'Исполнитель',
+    'executor_email' => 'holod@smirnovvit.ru',
+    'executor_name' => 'Виталий Смирнов',
     'mail_from' => 'no-reply@example.com',
 ];
 
@@ -73,6 +73,31 @@ $db->exec('CREATE TABLE IF NOT EXISTS pricing_items (
     total REAL NOT NULL,
     FOREIGN KEY(task_id) REFERENCES tasks(id)
 )');
+
+function ensure_demo_user(PDO $db): void
+{
+    $email = 'smirnovvit@vk.com';
+    $stmt = $db->prepare('SELECT id FROM users WHERE email = :email');
+    $stmt->execute([':email' => $email]);
+    if ($stmt->fetchColumn()) {
+        return;
+    }
+
+    $stmt = $db->prepare('INSERT INTO users (full_name, email, password_hash, department, phone, supervisor_name, supervisor_email, created_at)
+        VALUES (:full_name, :email, :password_hash, :department, :phone, :supervisor_name, :supervisor_email, :created_at)');
+    $stmt->execute([
+        ':full_name' => 'Ольга Смирнова',
+        ':email' => $email,
+        ':password_hash' => password_hash('demo1234', PASSWORD_DEFAULT),
+        ':department' => 'ОП',
+        ':phone' => '+7 900 000-00-00',
+        ':supervisor_name' => 'Руководитель отдела',
+        ':supervisor_email' => 'supervisor@example.com',
+        ':created_at' => date('Y-m-d H:i:s'),
+    ]);
+}
+
+ensure_demo_user($db);
 
 function current_user()
 {
