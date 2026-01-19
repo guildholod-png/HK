@@ -1,0 +1,147 @@
+:root {
+    font-family: "Inter", "Segoe UI", sans-serif;
+    color: #1e1e24;
+    background: #f6f7fb;
+}
+
+body {
+    margin: 0;
+    background: #f6f7fb;
+}
+
+.site-header {
+    background: #1f2a44;
+    color: #fff;
+    padding: 16px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.site-header nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 16px;
+    font-weight: 500;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 32px auto;
+    padding: 0 16px 48px;
+}
+
+.card {
+    background: #fff;
+    padding: 24px;
+    border-radius: 16px;
+    box-shadow: 0 12px 32px rgba(31, 42, 68, 0.08);
+    margin-bottom: 24px;
+}
+
+.form {
+    display: grid;
+    gap: 16px;
+}
+
+.form label {
+    display: grid;
+    gap: 6px;
+    font-weight: 500;
+}
+
+input, select, textarea {
+    padding: 10px 12px;
+    border: 1px solid #d7dbe7;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+button.btn, a.btn {
+    background: #1f2a44;
+    color: #fff;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+}
+
+.btn.secondary {
+    background: #eef1f7;
+    color: #1f2a44;
+}
+
+.btn.small {
+    padding: 6px 10px;
+    font-size: 12px;
+}
+
+.actions {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+table th, table td {
+    text-align: left;
+    padding: 10px 12px;
+    border-bottom: 1px solid #e6e9f2;
+}
+
+.flash {
+    padding: 12px 16px;
+    border-radius: 10px;
+    margin-bottom: 16px;
+}
+
+.flash.success {
+    background: #e7f6ee;
+    color: #1b5e3c;
+}
+
+.flash.error {
+    background: #fdecea;
+    color: #8c2d1d;
+}
+
+.item-row {
+    display: grid;
+    grid-template-columns: 150px 1.4fr 0.6fr 0.6fr 0.8fr 0.6fr 0.6fr;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.radio-group {
+    display: flex;
+    gap: 16px;
+}
+
+.task-meta {
+    display: grid;
+    gap: 6px;
+    margin-bottom: 16px;
+}
+
+.report-links {
+    margin-top: 16px;
+    display: flex;
+    gap: 12px;
+}
+
+small {
+    color: #6b7280;
+}

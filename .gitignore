@@ -29,6 +29,13 @@
 # typescript
 *.tsbuildinfo
 
+# php task portal
+/apps/task-portal-php/storage/*.db
+/apps/task-portal-php/storage/*.log
+/apps/task-portal-php/storage/*.xls
+/apps/task-portal-php/storage/*.pdf
+/apps/task-portal-php/uploads/
+
 # vscode / editors
 .vscode/
 .idea/
